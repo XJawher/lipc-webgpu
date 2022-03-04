@@ -14,7 +14,7 @@ export const InitGPU = async (idString = "canvas-webgpu") => {
     const checkgpu = CheckWebGPU();
     if (checkgpu.includes('Your current browser does not support WebGPU!')) {
         console.log(checkgpu);
-        throw ('Your current browser does not support WebGPU!');
+        throw new Error('Your browser does not support WebGPU');
     }
     const canvas = document.getElementById(idString) as HTMLCanvasElement;
     const adapter = await navigator.gpu?.requestAdapter();
@@ -40,11 +40,11 @@ export const CheckWebGPU = () => {
     let result = 'Great, your current browser supports WebGPU!';
     if (!navigator.gpu) {
         result = `Your current browser does not support WebGPU! Make sure you are on a system
-                     with WebGPU enabled. Currently, SPIR-WebGPU is only supported in
-                     <a href="https://www.google.com/chrome/canary/">Chrome canary</a>
-                     with the flag "enable-unsafe-webgpu" enabled. See the
-                     <a href="https://github.com/gpuweb/gpuweb/wiki/Implementation-Status">
-                     Implementation Status</a> page for more details.
+                     with WebGPU enabled.Currently, SPIR - WebGPU is only supported in
+            <a href="https://www.google.com/chrome/canary/" > Chrome canary < /a>
+        with the flag "enable-unsafe-webgpu" enabled.See the
+            < a href = "https://github.com/gpuweb/gpuweb/wiki/Implementation-Status" >
+                Implementation Status < /a> page for more details.
                     `;
     }
     return result;
