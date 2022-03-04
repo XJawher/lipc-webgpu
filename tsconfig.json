@@ -24,6 +24,10 @@
         "*"
       ]
     },
+    "typeRoots": [
+      "./node_modules/@webgpu/types",
+      "./node_modules/@types"
+    ],
     "jsx": "react-jsx"
   },
   "include": [
