@@ -21,7 +21,10 @@
     "baseUrl": "src",
     "paths": {
       "@/*": [
-        "*"
+        "./*"
+      ],
+      "@help/*": [
+        "./src/help/*"
       ]
     },
     "typeRoots": [

@@ -308,7 +308,6 @@ module.exports = function(webpackEnv) {
         .map(ext => `.${ext}`)
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
-        "@": path.resolve(__dirname, '../src'),
         'react-native': 'react-native-web',
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
@@ -316,6 +315,9 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        '@': path.resolve(__dirname, '../src'),
+        '@view': path.resolve(__dirname, '../src/view/'),
+        '@help': path.resolve(__dirname, paths.help),
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).
