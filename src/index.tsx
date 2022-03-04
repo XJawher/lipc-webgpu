@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "@/style/index.css";
 import App from "@/App";
-import Header from "@/view/header";
-import Home from "@/view/home";
 import reportWebVitals from "@/reportWebVitals";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { CheckWebGPU } from "@/help";
+import WebGPU01 from "@/view/WebGPU01/WebGPU01";
+import WebGPU02 from "@/view/WebGPU02/WebGPU02";
 
 function GoHome() {
   const [ttest] = useState(CheckWebGPU());
@@ -24,8 +24,8 @@ ReactDOM.render(
       <GoHome />
       <Routes>
         <Route path="/" element={<App />}></Route>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/header" element={<Header />}></Route>
+        <Route path="/WebGPU01" element={<WebGPU01 />}></Route>
+        <Route path="/WebGPU02" element={<WebGPU02 />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

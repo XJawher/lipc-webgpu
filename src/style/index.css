@@ -2,3 +2,8 @@
   display: flex;
   flex-direction: column;
 }
+
+.WebGPU-common {
+  width: 500px;
+  height: 600px;
+}
