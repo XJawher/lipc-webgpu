@@ -13,7 +13,6 @@ export const CreateGPUBuffer = (device: GPUDevice, data: Float32Array,
 export const InitGPU = async (idString = "canvas-webgpu") => {
     const checkgpu = CheckWebGPU();
     if (checkgpu.includes('Your current browser does not support WebGPU!')) {
-        console.log(checkgpu);
         throw new Error('Your browser does not support WebGPU');
     }
     const canvas = document.getElementById(idString) as HTMLCanvasElement;

@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 function App() {
   return (
     <div className="front-page">
-      <Link to="./WebGPU01">跳转到 WebGPU01</Link>
-      <Link to="./WebGPU02">跳转到 WebGPU02</Link>
+      <Link to="./WebGPU01">跳转到 WebGPU01 </Link>
+      <Link to="./WebGPU02">跳转到 WebGPU02 静态点</Link>
+      <Link to="./WebGPU08">跳转到 WebGPU08 正方形，单个缓冲区</Link>
     </div>
   );
 }

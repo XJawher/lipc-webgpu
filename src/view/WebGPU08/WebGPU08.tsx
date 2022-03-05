@@ -2,18 +2,17 @@ import { useEffect } from "react";
 
 import { CreateSquare } from "./main";
 
-function WebGPU01() {
+function WebGPU08() {
   useEffect(() => {
-    console.log("useEffect webgpu01");
     CreateSquare();
   }, []);
 
   return (
     <div className="WebGPU-common">
-      WebGPU01
-      <canvas id="WebGPU01" width="640" height="480"></canvas>
+      WebGPU08
+      <canvas id="WebGPU08" width="640" height="480"></canvas>
     </div>
   );
 }
 
-export default WebGPU01;
+export default WebGPU08;
