@@ -4,7 +4,9 @@ import { CreateSquare } from "./main";
 
 function WebGPU08() {
   useEffect(() => {
-    CreateSquare();
+    (async () => {
+      await CreateSquare();
+    })();
   }, []);
 
   return (

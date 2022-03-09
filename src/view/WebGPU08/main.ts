@@ -9,10 +9,7 @@ export const CreateSquare = async () => {
         //position    //color
         -0.5, -0.5, 1, 0, 0,  // vertex a
         -0.5, 0.5, 1, 1, 0,  // vertex d
-        0.5, -0.5, 0, 1, 0,  // vertex b
-        0.5, -0.5, 0, 1, 0,  // vertex b
-        -0.5, 0.5, 1, 1, 0,  // vertex d
-        0.5, 0.5, 0, 0, 1   // vertex c
+        0.5, -0.5, 0, 1, 1,  // vertex b
     ]);
 
     const vertexBuffer = CreateGPUBuffer(device, vertexData);
@@ -73,7 +70,9 @@ export const CreateSquare = async () => {
     const colorAttachmentsGPURenderPassColorAttachment: GPURenderPassColorAttachment[] = [
         {
             view: textureView,
-            loadValue: { r: 0.0, g: 0.0, b: 0.0, a: 1.0 },
+            // loadValue: { r: 131.0, g: 255.0, b: 0.0, a: 1.0 }, // background color
+            loadValue: [0.5, 0.5, 0.8, 1],
+            // loadValue: { r: 0.0, g: 0.0, b: 0.0, a: 1.0 },
             loadOp: "load",
             storeOp: "store",
         },
@@ -84,7 +83,7 @@ export const CreateSquare = async () => {
     const renderPass = commandEncoder.beginRenderPass(renderPassDescriptor);
     renderPass.setPipeline(pipeline);
     renderPass.setVertexBuffer(0, vertexBuffer);
-    renderPass.draw(6);
+    renderPass.draw(3);
     renderPass.end();
 
     device.queue.submit([commandEncoder.finish()]);

@@ -1,3 +1,5 @@
+import { changedTitle } from "./changedTitle";
+
 export const CreateGPUBuffer = (device: GPUDevice, data: Float32Array,
     usageFlag: GPUBufferUsageFlags = GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST) => {
     const buffer = device.createBuffer({
@@ -32,7 +34,7 @@ export const InitGPU = async (idString = "canvas-webgpu") => {
         format: format,
         size: size
     });
-    return { device, canvas, format, context };
+    return { device, canvas, format, context, size };
 };
 
 export const CheckWebGPU = () => {
@@ -48,3 +50,5 @@ export const CheckWebGPU = () => {
     }
     return result;
 }
+
+export { changedTitle };
