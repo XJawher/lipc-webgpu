@@ -8,6 +8,7 @@ import { CheckWebGPU } from "@/help";
 import WebGPU01 from "@/view/WebGPU01/WebGPU01";
 import WebGPU02 from "@/view/WebGPU02/WebGPU02";
 import WebGPU08 from "@/view/WebGPU08/WebGPU08";
+import WebGPU38 from "@/view/WebGPU38/WebGPU38";
 
 function GoHome() {
   const [ttest] = useState(CheckWebGPU());
@@ -28,6 +29,7 @@ ReactDOM.render(
         <Route path="/WebGPU01" element={<WebGPU01 />}></Route>
         <Route path="/WebGPU02" element={<WebGPU02 />}></Route>
         <Route path="/WebGPU08" element={<WebGPU08 />}></Route>
+        <Route path="/WebGPU38" element={<WebGPU38 />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
