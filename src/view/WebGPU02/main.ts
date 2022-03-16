@@ -8,7 +8,7 @@ export const CreateTriangle = async () => {
 
     const format = 'bgra8unorm';
 
-    const shader = Shaders('(31.0,14.0,13.0,1.0)');
+    const shader = Shaders('(1.0,0.0,0.0,1.0)');
     const pipeline = device.createRenderPipeline({
         vertex: {
             module: device.createShaderModule({
@@ -26,7 +26,12 @@ export const CreateTriangle = async () => {
             }]
         },
         primitive: {
-            topology: "triangle-list",
+            topology: "line-list",
+            //   | "point-list"
+            // | "line-list"
+            // | "line-strip"
+            // | "triangle-list"
+            // | "triangle-strip";
         }
     });
 
@@ -35,10 +40,10 @@ export const CreateTriangle = async () => {
     const colorAttachmentsGPURenderPassColorAttachment: GPURenderPassColorAttachment[] = [
         {
             view: textureView,
-            clearValue: { r: 0.0, g: 0.0, b: 0.0, a: 1.0 },
+            clearValue: { r: 0.0, g: 0.0, b: 1.0, a: 1.0 },
             loadOp: "clear",
             storeOp: "store",
-            loadValue: { r: 0.0, g: 0.0, b: 0.0, a: 1.0 }, //background color
+            loadValue: { r: 0.0, g: 0.0, b: 1.0, a: 1.0 }, //background color
         },
     ];
     const renderPassDescriptor: GPURenderPassDescriptor = {
