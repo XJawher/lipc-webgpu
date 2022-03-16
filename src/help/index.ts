@@ -20,7 +20,7 @@ export const InitGPU = async (idString = "canvas-webgpu") => {
     const canvas = document.getElementById(idString) as HTMLCanvasElement;
     const adapter = await navigator.gpu?.requestAdapter();
     const device = await adapter?.requestDevice() as GPUDevice;
-    const context = canvas.getContext('webgpu') as unknown as GPUCanvasContext;
+    const context = canvas.getContext('webgpu') as GPUCanvasContext;
 
     const devicePixelRatio = window.devicePixelRatio || 1;
     const size = [

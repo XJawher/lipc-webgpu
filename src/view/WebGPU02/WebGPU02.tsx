@@ -1,5 +1,17 @@
+import { useEffect } from "react";
+import { CreateTriangle } from "./main";
+
 function WebGPU02() {
-  return <div className="WebGPU02">WebGPU02</div>;
+  useEffect(() => {
+    CreateTriangle();
+  });
+
+  return (
+    <div className="WebGPU-common">
+      WebGPU02
+      <canvas id="WebGPU02" width="640" height="480"></canvas>
+    </div>
+  );
 }
 
 export default WebGPU02;
