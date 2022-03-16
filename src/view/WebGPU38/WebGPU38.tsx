@@ -35,14 +35,14 @@ import { LightInputs } from "./shaders";
 // });
 
 function WebGPU38() {
+  let textureFile = "brick.png";
+  let addressModeU = "repeat" as GPUAddressMode;
+  let addressModeV = "repeat" as GPUAddressMode;
+  let li: LightInputs = {};
+  let isAnimation = true;
+  let ul = 1;
+  let vl = 1;
   useEffect(() => {
-    let textureFile = "brick.png";
-    let addressModeU = "repeat" as GPUAddressMode;
-    let addressModeV = "repeat" as GPUAddressMode;
-    let li: LightInputs = {};
-    let isAnimation = true;
-    let ul = 1;
-    let vl = 1;
     CreateShape(
       ul,
       vl,
@@ -67,7 +67,20 @@ function WebGPU38() {
   });
 
   return (
-    <div className="WebGPU-common-38">
+    <div
+      className="WebGPU-common-38"
+      onClick={() =>
+        CreateShape(
+          ul,
+          vl,
+          li,
+          textureFile,
+          addressModeU,
+          addressModeV,
+          isAnimation
+        )
+      }
+    >
       WebGPU38
       <canvas id="WebGPU38" width="640" height="480"></canvas>
     </div>
