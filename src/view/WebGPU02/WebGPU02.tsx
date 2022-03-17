@@ -19,6 +19,7 @@ function WebGPU02() {
   return (
     <div className="WebGPU-common WebGPU02-class">
       <div>
+        WebGPU02
         <Select
           defaultValue="line-list"
           style={{ width: 120 }}
@@ -30,6 +31,7 @@ function WebGPU02() {
           <Option value="triangle-strip">triangle-strip</Option>
         </Select>
       </div>
+      <br />
       <canvas id="WebGPU02" width="640" height="480"></canvas>
     </div>
   );

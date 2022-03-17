@@ -8,7 +8,7 @@ export const CreateTriangle = async (topology: GPUPrimitiveTopology = 'line-list
 
     const format = 'bgra8unorm';
 
-    const shader = Shaders('(1.0,0.0,0.0,1.0)');
+    const shader = Shaders('(1.0,1.30,0.0,1.0)');
     const pipeline = device.createRenderPipeline({
         vertex: {
             module: device.createShaderModule({
@@ -51,7 +51,7 @@ export const CreateTriangle = async (topology: GPUPrimitiveTopology = 'line-list
     };
     const renderPass = commandEncoder.beginRenderPass(renderPassDescriptor);
     renderPass.setPipeline(pipeline);
-    renderPass.draw(6);
+    renderPass.draw(10);
     renderPass.end();
     device.queue.submit([commandEncoder.finish()]);
 }

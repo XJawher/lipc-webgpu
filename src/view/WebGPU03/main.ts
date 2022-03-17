@@ -2,7 +2,7 @@ import { InitGPU, CreateGPUBuffer } from '@/help';
 import shader from './shader.wgsl';
 import { Shaders } from './shaders';
 
-export const CreateTriangle = async (topology: GPUPrimitiveTopology = 'line-list') => {
+export const CreateTriangle = async (topology: GPUPrimitiveTopology = 'point-list') => {
     const gpu = await InitGPU('WebGPU03');
     const device = gpu.device;
 
@@ -46,7 +46,7 @@ export const CreateTriangle = async (topology: GPUPrimitiveTopology = 'line-list
     };
     const renderPass = commandEncoder.beginRenderPass(renderPassDescriptor);
     renderPass.setPipeline(pipeline);
-    renderPass.draw(6);
+    renderPass.draw(9);
     renderPass.end();
     device.queue.submit([commandEncoder.finish()]);
 }
