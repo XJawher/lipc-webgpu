@@ -2,7 +2,7 @@ import { InitGPU, CreateGPUBuffer } from '@/help';
 import shader from './shader.wgsl';
 import { Shaders } from './shaders';
 
-export const CreateTriangle = async () => {
+export const CreateTriangle = async (topology: GPUPrimitiveTopology = 'line-list') => {
     const gpu = await InitGPU('WebGPU02');
     const device = gpu.device;
 
@@ -26,7 +26,7 @@ export const CreateTriangle = async () => {
             }]
         },
         primitive: {
-            topology: "line-list",
+            topology: topology,
             //   | "point-list"
             // | "line-list"
             // | "line-strip"

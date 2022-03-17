@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "@/style/index.css";
+import "antd/dist/antd.css";
 import App from "@/App";
 import reportWebVitals from "@/reportWebVitals";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";

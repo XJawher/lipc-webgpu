@@ -1,14 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CreateTriangle } from "./main";
 
+import { Select } from "antd";
+
+const { Option } = Select;
+
 function WebGPU02() {
+  const [topology, setTopology] = useState("line-list");
+
   useEffect(() => {
-    CreateTriangle();
+    CreateTriangle(topology as GPUPrimitiveTopology);
   });
 
+  function handleChange(value: string) {
+    setTopology(value);
+  }
+
   return (
-    <div className="WebGPU-common">
-      WebGPU02
+    <div className="WebGPU-common WebGPU02-class">
+      <div>
+        <Select
+          defaultValue="line-list"
+          style={{ width: 120 }}
+          onChange={handleChange}
+        >
+          <Option value="point-list">point-list</Option>
+          <Option value="line-list">line-list</Option>
+          <Option value="triangle-list">triangle-list</Option>
+          <Option value="triangle-strip">triangle-strip</Option>
+        </Select>
+      </div>
       <canvas id="WebGPU02" width="640" height="480"></canvas>
     </div>
   );
