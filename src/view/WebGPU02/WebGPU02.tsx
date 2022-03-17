@@ -24,9 +24,9 @@ function WebGPU02() {
           style={{ width: 120 }}
           onChange={handleChange}
         >
-          <Option value="point-list">point-list</Option>
-          <Option value="line-list">line-list</Option>
-          <Option value="triangle-list">triangle-list</Option>
+          <Option value="point-list">点列表point-list</Option>
+          <Option value="line-list">线列表line-list</Option>
+          <Option value="triangle-list">三角形triangle-list</Option>
           <Option value="triangle-strip">triangle-strip</Option>
         </Select>
       </div>
