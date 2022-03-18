@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { CreateTriangle } from "./main";
+import { CreateGPUMachine } from "./main";
 
 function WebGPU04() {
   useEffect(() => {
-    CreateTriangle();
+    CreateGPUMachine({ id: "WebGPU04" });
   });
 
   return (
