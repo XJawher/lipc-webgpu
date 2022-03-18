@@ -2,7 +2,7 @@ import { InitGPU, CreateGPUBuffer } from '@/help';
 import { Shaders } from './shaders';
 
 export const CreateSquare = async () => {
-    const gpu = await InitGPU('WebGPU03');
+    const gpu = await InitGPU('WebGPU08');
     const device = gpu.device;
 
     const vertexData = new Float32Array([

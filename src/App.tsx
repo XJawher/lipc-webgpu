@@ -11,6 +11,7 @@ function App() {
       <Link to="./WebGPU01">跳转到 WebGPU01 绘制三角形</Link>
       <Link to="./WebGPU02">跳转到 WebGPU02 静态点，线</Link>
       <Link to="./WebGPU03">跳转到 WebGPU03 多个三角形</Link>
+      <Link to="./WebGPU04">跳转到 WebGPU04 缓冲区部分</Link>
       <Link to="./WebGPU08">跳转到 WebGPU08 正方形，单个缓冲区</Link>
       <Link to="./WebGPU38">跳转到 WebGPU38 Peaks Surface with Texture</Link>
     </div>

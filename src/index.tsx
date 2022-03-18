@@ -9,14 +9,15 @@ import { CheckWebGPU } from "@/help";
 import WebGPU01 from "@/view/WebGPU01/WebGPU01";
 import WebGPU02 from "@/view/WebGPU02/WebGPU02";
 import WebGPU03 from "@/view/WebGPU03/WebGPU03";
+import WebGPU04 from "@/view/WebGPU04/WebGPU04";
 import WebGPU08 from "@/view/WebGPU08/WebGPU08";
 import WebGPU38 from "@/view/WebGPU38/WebGPU38";
 
 function GoHome() {
-  const [ttest] = useState(CheckWebGPU());
+  const [canUseWebGpu] = useState(CheckWebGPU());
   return (
     <div>
-      <div>{ttest}</div>
+      <div>{canUseWebGpu}</div>
       <Link to="/"> 跳转到首页</Link>
     </div>
   );
@@ -31,6 +32,7 @@ ReactDOM.render(
         <Route path="/WebGPU01" element={<WebGPU01 />}></Route>
         <Route path="/WebGPU02" element={<WebGPU02 />}></Route>
         <Route path="/WebGPU03" element={<WebGPU03 />}></Route>
+        <Route path="/WebGPU04" element={<WebGPU04 />}></Route>
         <Route path="/WebGPU08" element={<WebGPU08 />}></Route>
         <Route path="/WebGPU38" element={<WebGPU38 />}></Route>
       </Routes>
