@@ -7,7 +7,7 @@ export const CreateGPUMachine = async (baseInfo: BaseInfo, topology: GPUPrimitiv
     const device = gpu.device;
 
     const format = 'bgra8unorm';
-
+    // x^2+y^2+a*x=a*sqrt(x^2+y^2) 和 x^2+y^2-a*x=a*sqrt(x^2+y^2）
     const vertexData = new Float32Array([
         -0.5, 0.5, // a
         0.0, 0.0,  // b
