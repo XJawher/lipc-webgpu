@@ -11,13 +11,13 @@ export interface LightInputs {
 export const Shaders = (li: LightInputs) => {
 
     // define default input values:
-    li.ambientIntensity = li.ambientIntensity == undefined ? '0.2' : li.ambientIntensity;
-    li.diffuseIntensity = li.diffuseIntensity == undefined ? '0.8' : li.diffuseIntensity;
-    li.specularIntensity = li.specularIntensity == undefined ? '0.4' : li.specularIntensity;
-    li.shininess = li.shininess == undefined ? '30.0' : li.shininess;
-    li.specularColor = li.specularColor == undefined ? '(1.0, 1.0, 1.0)' : li.specularColor;
-    li.isPhong = li.isPhong == undefined ? '0' : li.isPhong;
-    li.isTwoSideLighting = li.isTwoSideLighting == undefined ? '1' : li.isTwoSideLighting;
+    li.ambientIntensity = li.ambientIntensity === undefined ? '0.2' : li.ambientIntensity;
+    li.diffuseIntensity = li.diffuseIntensity === undefined ? '0.8' : li.diffuseIntensity;
+    li.specularIntensity = li.specularIntensity === undefined ? '0.4' : li.specularIntensity;
+    li.shininess = li.shininess === undefined ? '30.0' : li.shininess;
+    li.specularColor = li.specularColor === undefined ? '(1.0, 1.0, 1.0)' : li.specularColor;
+    li.isPhong = li.isPhong === undefined ? '0' : li.isPhong;
+    li.isTwoSideLighting = li.isTwoSideLighting === undefined ? '1' : li.isTwoSideLighting;
 
     const vertex = `
         [[block]] struct Uniforms {
@@ -74,19 +74,19 @@ export const Shaders = (li: LightInputs) => {
             let H:vec3<f32> = normalize(L + V);
             let twoSide:i32 = ${li.isTwoSideLighting};
             var diffuse:f32 = ${li.diffuseIntensity} * max(dot(N, L), 0.0);
-            if(twoSide == 1){
+            if(twoSide === 1){
                 diffuse = diffuse + ${li.diffuseIntensity} * max(dot(-N, L), 0.0);
             }
             var specular:f32;
             var isp:i32 = ${li.isPhong};
-            if(isp == 1){
+            if(isp === 1){
                 specular = ${li.specularIntensity} * pow(max(dot(V, reflect(-L, N)),0.0), ${li.shininess});
-                if(twoSide == 1) {
+                if(twoSide === 1) {
                     specular = specular + ${li.specularIntensity} * pow(max(dot(V, reflect(-L, -N)),0.0), ${li.shininess});
                 }
             } else {
                 specular = ${li.specularIntensity} * pow(max(dot(N, H),0.0), ${li.shininess});
-                if(twoSide == 1){
+                if(twoSide === 1){
                     specular = specular + ${li.specularIntensity} * pow(max(dot(-N, H),0.0), ${li.shininess});
                 }
             }
