@@ -13,9 +13,12 @@ import WebGPU04 from "@/view/WebGPU04/WebGPU04";
 import WebGPU05 from "@/view/WebGPU05/WebGPU05";
 import WebGPU08 from "@/view/WebGPU08/WebGPU08";
 import WebGPU38 from "@/view/WebGPU38/WebGPU38";
+import WebGPU56 from "@/view/WebGPU56/WebGPU56";
 
 function GoHome() {
   const [canUseWebGpu] = useState(CheckWebGPU());
+  console.log('canUseWebGpu');
+
   return (
     <div>
       <div>{canUseWebGpu}</div>
@@ -37,6 +40,7 @@ ReactDOM.render(
         <Route path="/WebGPU05" element={<WebGPU05 />}></Route>
         <Route path="/WebGPU08" element={<WebGPU08 />}></Route>
         <Route path="/WebGPU38" element={<WebGPU38 />}></Route>
+        <Route path="/WebGPU56" element={<WebGPU56 />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

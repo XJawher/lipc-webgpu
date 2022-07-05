@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "3d-view-controls": "^2.2.2",
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",
@@ -16,6 +15,7 @@
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.3",
     "@webgpu/types": "^0.1.13",
+    "3d-view-controls": "^2.2.2",
     "ansi-html-community": "^0.0.8",
     "antd": "^4.19.2",
     "babel-jest": "^27.4.2",
@@ -152,5 +152,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.14"
   }
 }

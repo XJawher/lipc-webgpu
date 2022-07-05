@@ -17,6 +17,7 @@ function App() {
       </Link>
       <Link to="./WebGPU08">跳转到 WebGPU08 正方形，单个缓冲区</Link>
       <Link to="./WebGPU38">跳转到 WebGPU38 Peaks Surface with Texture</Link>
+      <Link to="./WebGPU56">跳转到 WebGPU56</Link>
     </div>
   );
 }
